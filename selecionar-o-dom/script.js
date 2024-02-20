@@ -17,3 +17,5 @@ console.log(primeiroH2);
 // Selecione o último p do site
 const ultimoP = document.querySelectorAll("p");
 console.log(ultimoP[ultimoP.length - 1]);
+
+//0304 forEach e Arrow Function
