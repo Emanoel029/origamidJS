@@ -21,6 +21,6 @@ console.log(
   window.pageYOffset
 );
 
-//matchMedia() é a mesma coisa que usar @media query no css 19,02,17,34,15,35
+//matchMedia() é a mesma coisa que usar @media query no css
 const small = window.matchMedia("(max-width: 600px)");
 console.log(small);
