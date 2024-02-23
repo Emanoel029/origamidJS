@@ -21,3 +21,5 @@ console.log(proximoDD);
 const animais = document.querySelector(".animais");
 
 faq.innerHTML = animais.innerHTML;
+
+//0309 Navegação por Tabs
