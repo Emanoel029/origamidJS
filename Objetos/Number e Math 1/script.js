@@ -1,53 +1,35 @@
-console.log(Number.isNaN(NaN)); //True
-console.log(Number.isNaN(4 + 5)); // false não é NaN
+// Retorne um número aleatório
+// entre 1050 e 2000
 
-console.log(Number.parseFloat("33.45")); //saída um número
-console.log(Number.parseFloat("100 Reais")); //saída um número 100 OBS: n pode ter caracter na frente do num R$ 100
+const numAle = Math.floor(Math.random() * (2000 - 1050 + 1)) + 1050; // (max - min + 1) + min
+console.log(numAle);
 
-let valor = "R$ 100 reais";
-console.log(valor.replace("R$ ", ""));
+// Retorne o maior número da lista abaixo
+const numeros = "4, 5, 20, 8, 9";
+const ArrayNum = numeros.split(",").map(Number); //map transforma a str em Número
 
-//toFixed() arredonda com base no total de casas descimais
+const maior = Math.max(...ArrayNum); //os três pontos podem ser usados para expandir elementos
+console.log(maior);
+// console.log(Math.max(numeros));
 
-const preco = 2.4;
-console.log(preco.toFixed()); // 2.4 -> saida 2. se for 2.5 -> saida 3
+// Crie uma função para limpar os preços
+// e retornar os números com centavos arredondados
+// depois retorne a soma total
+const listaPrecos = ["R$ 59,99", " R$ 100,222", "R$ 230  ", "r$  200"];
 
-const carro = 1000.453;
-console.log(carro.toFixed(2)); // duas casa descimais -> 1000.45
+function limparPreco(preco) {
+  preco = +preco.toUpperCase().replace("R$", "").trim().replace(",", ".");
+  preco = +preco.toFixed(2);
+  return preco;
+}
 
-const preco1 = 1499.49;
-console.log(+preco1.toFixed() + 34); //saída 1499 como após o ponto é 4 ele arredonda para baixo
+let soma = 0;
+listaPrecos.forEach((i) => {
+  soma += limparPreco(i);
+});
 
-//toString -> transforma número em string
-const n = 2.99;
-console.log(n.toString());
-
-//(toLocaleString)formata o número de acordo com a língua e opção passada
-const preco2 = 59.49;
 console.log(
-  preco2.toLocaleString("en-US", { style: "currency", currency: "USD" })
-);
-console.log(
-  preco2.toLocaleString("pr-BR", { style: "currency", currency: "BRL" })
+  soma.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
 );
 
-//Math é um objeto nativo q possui propriedade e métodos de expressões matemáticas comuns
-//PI , abs-> transforma valor negativo em positivo
-
-console.log(Math.ceil(4.4)); // arredonda pra mais (teto)
-console.log(Math.floor(4.8334)); // arredonda para menos
-console.log(Math.round(4.5334)); // arredonda para menos até o primeiro depois do ponto for 4 acima disso é p mais
-
-//max() retorna o maior número de uma lista
-//min() retorna o menor número de uma lista de argumentos
-console.log(Math.max(5, 3, 10, 42, 2)); // 42
-console.log(Math.min(5, 3, 10, 42, 2)); // 2
-
-//Random() número aleatório entre 0 e 1
-console.log(Math.random());
-console.log(Math.floor(Math.random() * 100)); //floor está arrdondando para menor
-console.log(Math.round(Math.random() * 25)); //rond está arredondando para mais
-
-//está arredondando entre 72 e 32
-console.log(Math.floor(Math.random() * (72 - 32 + 1)) + 32);
-// console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+// limparPreco(listaPrecos[1]);
