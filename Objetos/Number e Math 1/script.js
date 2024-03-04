@@ -22,14 +22,13 @@ function limparPreco(preco) {
   preco = +preco.toFixed(2);
   return preco;
 }
-
-let soma = 0;
+let cont = 0;
 listaPrecos.forEach((i) => {
-  soma += limparPreco(i);
+  cont += limparPreco(i);
 });
 
 console.log(
-  soma.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+  cont.toLocaleString("pt-br", { style: "currency", currency: "BRL" })
 );
 
-// limparPreco(listaPrecos[1]);
+// console.log(limparPreco(listaPrecos[1]));
