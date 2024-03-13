@@ -10,15 +10,12 @@
     //para mostra o conteúdo mesmo q o js esteja desabilitado no navegador do usuário.
     document.documentElement.className += ' js' // += para não sobrescrever a class que já tem no HTML
   </script>
-  <script src="animacoes.js" defer></script>
-  <script src="script.js" defer></script>
+  <!-- <script src="animacoes.js" defer></script> -->
+  <script type="module" src="js/script.js" defer></script>
   <title>Animais Fantásticos</title>
 </head>
 
 <body>
-  <div data-cor="azul" data-anima-scroll='left' data-width="500">Uma Div</div>
-
-
   <nav class="menu js-menu" data-menu="suave">
     <ul>
       <li><a href="#animais">Animais</a></li>

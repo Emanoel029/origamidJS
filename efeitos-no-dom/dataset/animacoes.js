@@ -1,15 +1,16 @@
 //Essa função initTabNav() é apenas para isolar todo o bloco de código que está dentro dela.
 function initTabNav() {
-  const tabMenu = document.querySelectorAll(".js-tabmenu li");
-  const tabContent = document.querySelectorAll(".js-tabcontent section");
+  const tabMenu = document.querySelectorAll("[data-tab='menu'] li");
+  const tabContent = document.querySelectorAll("[data-tab='content'] section");
   tabContent[0].classList.add("ativo"); //para sempre vir o primeiro item como ativo
 
   function activeTab(index) {
     tabContent.forEach((e) => {
       e.classList.remove("ativo"); // remove ativo na função
     });
-
-    tabContent[index].classList.add("ativo"); //add ativo na função
+    console.log(tabContent[index].dataset.anime);
+    const direcao = tabContent[index].dataset.anime; // add os data
+    tabContent[index].classList.add("ativo", direcao); //add ativo na função
   }
 
   tabMenu.forEach((itemMenu, index) => {
@@ -23,7 +24,9 @@ initTabNav();
 
 //isolando esse bloco de código dentro dessa function initAccordion()
 function initAccordion() {
-  const accondionList = document.querySelectorAll(".js-accordion dt");
+  const accondionList = document.querySelectorAll(
+    "[data-anime='accordion'] dt"
+  );
   const activeClass = "ativo";
   if (accondionList.length) {
     accondionList[0].classList.add(activeClass); //deichando o primeiro elemento ativo DT
@@ -45,7 +48,9 @@ initAccordion();
 
 //Scroll suave OBS:Essa function scrollSuave é para isolar essa parte do códico
 function scroollSuave() {
-  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+  const linksInternos = document.querySelectorAll(
+    '[data-menu="suave"] a[href^="#"]'
+  );
 
   function scrollToSection(event) {
     event.preventDefault(); //previni p n descer p a section clicada
@@ -72,7 +77,7 @@ function scroollSuave() {
 scroollSuave();
 
 function initAnimacaoScroll() {
-  const sections = document.querySelectorAll(".js-scroll");
+  const sections = document.querySelectorAll("[data-anime='scroll']");
   if (sections.length) {
     const windowMetade = window.innerHeight * 0.6; // calculo p pegar 60% do tamanho da tela p ter a animação
 
