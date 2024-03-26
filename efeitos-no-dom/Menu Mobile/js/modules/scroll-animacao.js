@@ -9,7 +9,9 @@ export default function initAnimacaoScroll() {
         const isSectionVisible = sectionTop - windowMetade < 0;
         if (isSectionVisible)
           i.classList.add("ativo"); // coloca a animação(class Ativo)
-        else i.classList.remove("ativo"); // remove a animação (class Ativo)
+        else if (i.classList.contains("ativo")) {
+          i.classList.remove("ativo"); // remove a animação (class Ativo)
+        }
       });
     }
     animaScroll(); // p animar a primeira section assim q inicia o site

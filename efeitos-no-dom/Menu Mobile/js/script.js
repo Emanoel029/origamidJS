@@ -5,6 +5,8 @@ import initTabNav from "./modules/tabnav.js";
 import initModal from "./modules/modal.js";
 import iniTooltip from "./modules/tooltip.js";
 import iniDropdownMenu from "./modules/dropdown-menu.js";
+import iniDMenuMobile from "./modules/menu-mobile.js";
+import initAnimaNumeros from "./modules/anima-numeros.js";
 
 scroollSuave(); // animação do scroll
 initAnimacaoScroll(); // animação de quando vai dando o scroll vai aparecendo
@@ -13,3 +15,5 @@ initTabNav(); //animaçõa da descrição das fotos
 initModal();
 iniTooltip();
 iniDropdownMenu();
+iniDMenuMobile();
+initAnimaNumeros();
