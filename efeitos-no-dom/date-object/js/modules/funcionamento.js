@@ -1,0 +1,20 @@
+//isolando esse bloco de código dentro dessa function initAccordion()
+export default function initFuncionamento() {
+  const funcionamento = document.querySelector("[data-semana]");
+  const diasSemana = funcionamento.dataset.semana.split(",").map(Number);
+  const horaioSemana = funcionamento.dataset.horario.split(",").map(Number);
+
+  const dataAgora = new Date();
+  const diaAgora = dataAgora.getDay();
+
+  const horaioAgora = dataAgora.getHours();
+
+  const semanaAberta = diasSemana.indexOf(diaAgora) !== -1;
+
+  const horarioAberto =
+    horaioAgora >= horaioSemana[0] && horaioAgora < horaioSemana[1];
+
+  if (semanaAberta && horarioAberto) {
+    funcionamento.classList.add("aberto");
+  }
+}
