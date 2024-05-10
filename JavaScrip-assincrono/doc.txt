@@ -1,0 +1,105 @@
+
+
+								PROMISE
+
+  estrutura da promise
+
+  const promesa = new Promise(function (resolve) {
+  let condicao = true;
+  if (condicao) {
+    resolve("Emanoel");
+  } else {
+    reject(Error("Um erro ocorreu na promise"));
+  }
+});
+
+console.log(promesa);
+Essa é a melhor empresa
+
+
+						Estrutura buscando o conteúdo em um txt e jogando na tela dentro da div no arquivo html.
+
+const doc = fetch("./doc.txt");    OBS: trocando o fetch por site de ("viacep.com.br/ws/cep q eu quero q busque/json/) fetch("https://viacep.com.br/ws/60135080/json/")
+
+doc
+  .then((resolucao) => {
+    return resolucao.text();
+  })
+  .then((body) => {
+    const conteudo = document.querySelector(".conteudo");
+    conteudo.innerText = body;
+    console.log(body);
+  });
+  
+  
+  						Transformando em jeson 
+  						
+  const cep = fetch("https://viacep.com.br/ws/60135080/json/");
+
+cep
+  .then((resolucao) => {
+    return resolucao.json();		----> O json transforma em um objeto javascript se troca para text vai ser text exatamente como é o json em texto
+  })
+  .then((body) => {
+    const conteudo = document.querySelector(".conteudo");
+    conteudo.innerText = body.logradouro; //mostrar na tela
+    console.log(body); // mostrar no console
+  });
+  
+  
+  
+  					Buscando uma img
+  					
+  const imagem = fetch("./imagem.png");
+
+imagem
+  .then((r) => r.blob())
+  .then((body) => {
+    const blobURL = URL.createObjectURL(body);
+    const imagemDom = document.querySelector("img");
+    imagemDom.src = blobURL;
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

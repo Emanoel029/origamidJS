@@ -1,0 +1,19 @@
+
+
+								PROMISE
+
+  estrutura da promise
+
+  const promesa = new Promise(function (resolve) {
+  let condicao = true;
+  if (condicao) {
+    resolve("Emanoel");
+  } else {
+    reject(Error("Um erro ocorreu na promise"));
+  }
+});
+
+console.log(promesa);
+
+Essa é a melhor empresa
+Jesus Cristo vai transformar minha vida.
